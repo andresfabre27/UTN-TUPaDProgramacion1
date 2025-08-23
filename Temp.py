@@ -1,9 +1,9 @@
-#Ejercicio Nro 2
+#Ejercicio Nro 3
 
-nota=int(input("Ingresa tu nota: "))
+numero=float(input("Ingrese un numero PAR: "))
 
-if nota>=6 :
-    print("Aprobado")
+if numero%2==0 :
+    print("Ha ingresado un número PAR")
 
 else :
-    print("Desaprobado")
+    print("Por favor, ingrese un numero PAR")

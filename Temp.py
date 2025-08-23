@@ -1,9 +1,15 @@
-#Ejercicio Nro 3
+#Ejercicio Nro 4
 
-numero=float(input("Ingrese un numero PAR: "))
+edad=int(input("Ingresa tu edad: "))
 
-if numero%2==0 :
-    print("Ha ingresado un número PAR")
+if edad<12 :
+    print("Eres un niño")
+
+elif edad>=12 and edad <18 :
+    print("Eres un Adolecente")
+
+elif edad>=18 and edad <30 :
+    print("Eres un Adulto/a joven")
 
 else :
-    print("Por favor, ingrese un numero PAR")
+    print("Eres un Adulto/a")

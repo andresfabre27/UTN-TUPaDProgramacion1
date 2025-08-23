@@ -1,15 +1,9 @@
-#Ejercicio Nro 4
+#Ejercicio Nro 5
 
-edad=int(input("Ingresa tu edad: "))
+contraseña=input("Ingresa una contraseña entre 8 y 14 caracteres: ")
 
-if edad<12 :
-    print("Eres un niño")
-
-elif edad>=12 and edad <18 :
-    print("Eres un Adolecente")
-
-elif edad>=18 and edad <30 :
-    print("Eres un Adulto/a joven")
+if len(contraseña)>=8 and len(contraseña)<=14 :
+    print("Ha ingresado una contraseña correcta")
 
 else :
-    print("Eres un Adulto/a")
+    print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")

@@ -1,7 +1,7 @@
 #Trabajo Practico Nro 3
 #Tema: Condicionales
 #Nomnbre: Andrés Fabre, Cristian 
-"""
+
 #Ejercicio Nro 1
 edad=int(input("Ingresa tu edad: "))
 
@@ -92,7 +92,7 @@ if ultima_letra in vocal :
     print(palabra_final)
 else :
     print(palabra) 
-   """
+   
 #Ejercicio Nro 8
 
 #Pedimos los datos y la opcion que desea realizar
@@ -142,4 +142,37 @@ elif magnitud < 7:
 else:
     print("La magnitud del sismo fue extremo")
     """
+
+#Ejercicio Nro 10
+#Pedimos los datos
+hemisferio = input("Ingrese hemisferio (N para norte / S para sur): ").upper()
+mes = input("Ingrese el NOMBRE del mes: ").lower()
+dia = int(input("Ingrese el día (1-31): "))
+
+# Determinar estación como si fuera hemisferio norte
+if (mes == "diciembre" and dia >= 21) or (mes == "enero") or (mes == "febrero") or (mes == "marzo" and dia <= 20):
+    estacion = "Invierno"
+elif (mes == "marzo" and dia >= 21) or (mes == "abril") or (mes == "mayo") or (mes == "junio" and dia <= 20):
+    estacion = "Primavera"
+elif (mes == "junio" and dia >= 21) or (mes == "julio") or (mes == "agosto") or (mes == "septiembre" and dia <= 20):
+    estacion = "Verano"
+elif (mes == "septiembre" and dia >= 21) or (mes == "octubre") or (mes == "noviembre") or (mes == "diciembre" and dia <= 20):
+    estacion = "Otoño"
+else:
+    estacion = "Mes inválido"
+
+# Si está en hemisferio sur, se invierten las estaciones
+if hemisferio == "S":
+    if estacion == "Invierno":
+        estacion = "Verano"
+    elif estacion == "Verano":
+        estacion = "Invierno"
+    elif estacion == "Primavera":
+        estacion = "Otoño"
+    elif estacion == "Otoño":
+        estacion = "Primavera"
+elif hemisferio != "N":
+    estacion = "Hemisferio inválido"
+
+print("La estación es:", estacion)
 

@@ -1,7 +1,7 @@
 #Trabajo Practico Nro 3
 #Tema: Condicionales
 #Nomnbre: Andrés Fabre, Cristian 
-
+"""
 #Ejercicio Nro 1
 edad=int(input("Ingresa tu edad: "))
 
@@ -92,3 +92,26 @@ if ultima_letra in vocal :
     print(palabra_final)
 else :
     print(palabra) 
+   """
+#Ejercicio Nro 8
+
+#Pedimos los datos y la opcion que desea realizar
+nombre=input("Ingrese Su nombre.")
+opcion=int(input("Ingrese la opcion deseada:\nOpcion 1 si quiere su nombre en mayuscula\nOpcion 2 si lo quiere en minuscula\nOpcion 3 si solo quiere la primer letra en mayuscula. "))
+
+# Usamos condicionales para transformar el nombre según la opción
+if opcion == 1:
+    print(f"tu nombre en mayuscula es {nombre.upper()}")   
+elif opcion == 2:
+    print(f"tu nombre en mayuscula es {nombre.lower()}")   
+elif opcion == 3:
+    print(f"tu nombre en mayuscula es {nombre.title()}")
+else:
+    print("la opcion ingresada no es correcta")
+    
+#Ejercicio Nro 9
+
+
+
+
+

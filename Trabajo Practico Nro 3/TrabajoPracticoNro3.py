@@ -111,7 +111,35 @@ else:
     
 #Ejercicio Nro 9
 
+#Pedimos los Datos
+magnitud = float(input("ingrese la magnitud del sismo. "))
+#Definimos la magnitud e imprimimos
+if magnitud < 3 :
+    print ("La MAgnitud del sismo fue Muy  leve ")
+elif magnitud >=3 and magnitud < 4:
+    print ("La MAgnitud del sismo fue Leve ")
+elif magnitud >=4 and magnitud < 5:
+    print ("La MAgnitud del sismo fue Moderado ")
+elif magnitud >=5 and magnitud < 6:
+    print ("La MAgnitud del sismo fue Fuerte")
+elif magnitud >=6 and magnitud < 7:
+    print ("La MAgnitud del sismo fue Muy Fuerte")
+else:
+    print ("La MAgnitud del sismo fue Extremo")
 
-
-
+#entiendo que el ejercicio pide Mayor o igual que 3  y menor que 4, etc pero el rango de diferencia es minima pero se podria ahorra codigo de la siguiente forma
+    """
+    if magnitud < 3:
+    print("La magnitud del sismo fue muy leve")
+elif magnitud < 4:
+    print("La magnitud del sismo fue leve")
+elif magnitud < 5:
+    print("La magnitud del sismo fue moderado")
+elif magnitud < 6:
+    print("La magnitud del sismo fue fuerte")
+elif magnitud < 7:
+    print("La magnitud del sismo fue muy fuerte")
+else:
+    print("La magnitud del sismo fue extremo")
+    """
 

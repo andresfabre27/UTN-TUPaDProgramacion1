@@ -1,17 +1,18 @@
-#Ejercicio Nro 8
+#Ejercicio Nro 9
 
-nombre=input("Ingrese su nombre: ")
-print(""" 1- Si quiere su nombre en mayúsculas.
- 2- Si quiere su nombre en minúsculas.
- 3- Si quiere su nombre con la primera letra mayúscula.""")
-menu=int(input("Ingrese el numero: "))
+magnitud=float(input("Ingrese la magnitud del terremonto: "))
+print("Clasificacion: ")
 
-if menu==1 :
-    print(nombre.upper())
-elif menu==2 :
-    print(nombre.lower())
-elif menu==3 :
-    print(nombre.title())
+if magnitud<3 :
+    print("Muy leve")
+elif magnitud>=3 and magnitud<4 :
+    print("Ligeramente perceptible")
+elif magnitud>=4 and magnitud<5 :
+    print("Moderado")
+elif magnitud>=5 and magnitud<6 :
+    print("Fuerte")
+elif magnitud>=6 and magnitud<7 :
+    print("Muy Fuerte")
 else :
-    print("No elijio una opción valida")
+    print("Exremo")
 

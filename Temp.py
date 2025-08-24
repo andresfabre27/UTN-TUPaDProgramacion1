@@ -1,9 +1,20 @@
-#Ejercicio Nro 5
+#Ejercicio Nro 6
+import random
+from statistics import mode, median, mean
 
-contraseña=input("Ingresa una contraseña entre 8 y 14 caracteres: ")
+numeros_aleatorios=[random.randint(1,100) for i in range(50)]
+moda=mode(numeros_aleatorios)
+mediana=median(numeros_aleatorios)
+media=mean(numeros_aleatorios)
 
-if len(contraseña)>=8 and len(contraseña)<=14 :
-    print("Ha ingresado una contraseña correcta")
+if media>mediana and mediana>moda :
 
-else :
-    print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
+    print("Hay Sesgo positivo o a la derecha")
+
+elif media<mediana and mediana<moda :
+
+    print("Hay Sesgo negativo o a la izquierda")
+
+elif media==mediana==moda :
+
+    print("Sin sesgo")

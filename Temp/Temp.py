@@ -1,10 +1,16 @@
-#Ejercicio Nro 7
+#Ejercicio Nro 10
+
+import math
 
 numero=int(input("Ingrese un numero: "))
-suma=0
+numero_invertido=0
 
-for i in range(0,numero+1):
-    suma=suma+i
+while numero>0:
+    digito=numero%10
+    numero_invertido=numero_invertido*10+digito
+    numero=math.trunc(numero/10)
 
-print(f"La suma es: {suma}")
+print(numero_invertido)
+
+
 

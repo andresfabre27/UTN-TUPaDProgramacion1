@@ -80,3 +80,56 @@ for i in range(0,numero+1):
     suma=suma+i
 
 print(f"La suma es: {suma}")
+
+#Ejercicio nro 8
+
+contador=0
+numeros_pares=0
+numeros_impares=0
+numeros_positivos=0
+numeros_negativos=0
+
+while contador <100:
+  numero=int(input("Ingrese un numero: "))
+  if numero%2==0:
+    numeros_pares=numeros_pares+1
+  elif numero%3==0:
+    numeros_impares=numeros_impares+1
+
+  if numero>0:
+    numeros_positivos=numeros_positivos+1
+  elif numero<0:
+    numeros_negativos=numeros_negativos+1
+
+  contador+=1
+
+print(f"Hay {numeros_pares} numeros PARES")
+print(f"Hay {numeros_impares} numeros IMPARES")
+print(f"Hay {numeros_positivos} numeros POSITIVOS")
+print(f"Hay {numeros_negativos} numeros NEGATIVOS ")
+
+#Ejercicio Nro 9
+
+promedio=0
+suma=0
+
+for i in range(100):
+   numero=int(input("Ingrese un numero: "))
+   suma=suma+numero
+
+promedio=suma/100
+print(f"El promedio es: {promedio}")
+
+#Ejercicio Nro 10
+
+import math
+
+numero=int(input("Ingrese un numero: "))
+numero_invertido=0
+
+while numero>0:
+    digito=numero%10
+    numero_invertido=numero_invertido*10+digito
+    numero=math.trunc(numero/10)
+
+print(numero_invertido)

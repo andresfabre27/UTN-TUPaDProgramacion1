@@ -1,13 +1,10 @@
-#Ejercicio Nro 4
+#Ejercicio Nro 7
 
-print("Ingrese numeros para sumarlos en secuencia")
+numero=int(input("Ingrese un numero: "))
 suma=0
-fin_suma=False
 
-while fin_suma!=True :
-    numero=int(input("Ingrese un numero distinto de cero: "))
-    suma=suma+numero
-    if numero==0 :
-        fin_suma=True
+for i in range(0,numero+1):
+    suma=suma+i
 
-print(f"La suma acumulada es: {suma}")
+print(f"La suma es: {suma}")
+

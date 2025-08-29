@@ -45,3 +45,38 @@ while fin_suma!=True :
         fin_suma=True
 
 print(f"La suma acumulada es: {suma}")
+
+# Ejercicio Nro 5
+
+import random
+
+print("Adivine un numero del 0 al 9")
+numero_aleatorio=random.randint(0,9)
+adivinado=False
+intentos=0
+
+while adivinado!=True :
+
+  numero=int(input("Ingrese un numero: "))
+  intentos+=1
+
+  if numero==numero_aleatorio :
+    adivinado=True
+
+print(f"Usted realizo {intentos} intentos para adivinar el numero") 
+
+#Ejercicio Nr6 
+
+for i in range(100,-1,-1):
+    if i%2==0:
+        print(i)
+
+#Ejercicio Nro 7
+
+numero=int(input("Ingrese un numero: "))
+suma=0
+
+for i in range(0,numero+1):
+    suma=suma+i
+
+print(f"La suma es: {suma}")

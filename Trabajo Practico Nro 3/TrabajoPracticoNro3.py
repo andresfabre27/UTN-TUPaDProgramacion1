@@ -110,7 +110,6 @@ elif menu==3 :
 else :
     print("No elijio una opción valida")
 
-
 #Ejercicio Nro 9
 
 magnitud=float(input("Ingrese la magnitud del terremonto: "))

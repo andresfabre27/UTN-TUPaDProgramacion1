@@ -1,16 +1,8 @@
-#Ejercicio Nro 10
+#Ejercicio Nro 12
 
-import math
-
-numero=int(input("Ingrese un numero: "))
-numero_invertido=0
-
-while numero>0:
-    digito=numero%10
-    numero_invertido=numero_invertido*10+digito
-    numero=int(numero/10)
-
-print(numero_invertido)
+cadena="hipopotamo"
+nueva_cadena=cadena[3:5]
+print(nueva_cadena)
 
 
 

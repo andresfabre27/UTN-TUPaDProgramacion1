@@ -85,3 +85,110 @@ cadena="hipopotamo"
 nueva_cadena=cadena[3:5]
 print(nueva_cadena)
 
+#Ejercicio Nro 14
+
+"""
+En Python, las variables no se pasan ni estrictamente por valor ni por referencia, sino por "asignación" o "paso por objeto". Esto significa que los argumentos pasados a una función son referencias a objetos en memoria. Si un objeto es inmutable (como los números o las tuplas), la asignación dentro de la función creará una nueva variable local y no afectará al original, similar al paso por valor. Sin embargo, si se pasa un objeto mutable (como las listas o diccionarios), las modificaciones dentro de la función sí se reflejarán en el objeto original, similar al paso por referencia. 
+Conceptos clave
+Inmutabilidad vs. Mutabilidad:
+Los tipos de datos inmutables (como los enteros, flotantes, cadenas y tuplas) no se pueden cambiar después de su creación, mientras que los mutables (listas, diccionarios, conjuntos) sí pueden ser modificados. 
+Objetos en memoria:
+En Python, todo es un objeto. Las variables son nombres que apuntan a estos objetos. 
+Asignación:
+Cuando asignas una variable ( x = 10 ), estás haciendo que esa variable apunte a un objeto "10" en memoria. Cuando pasas x a una función, la función recibe una copia de esa referencia (una nueva variable local que apunta al mismo objeto). 
+
+"""
+
+#Ejercicio Nro 16
+
+class palabra:
+
+    def analizar_palabra(self, cadena):
+        
+        for caracter in cadena:
+            if caracter.isdigit():
+                salida=True
+            else:
+                salida=False
+                
+        print(salida)
+
+palabra=palabra()
+frase=input("Ingrese una palabra: ")
+palabra.analizar_palabra(frase)
+
+#Ejercicio Nro 18
+
+from datetime import date
+
+class FuncionesPrograma:
+
+    @staticmethod
+
+    def getFechaDate(anio,mes,dia):
+        
+        return date(anio,mes,dia)
+    
+print("Ingrese una fecha")
+
+dia=int(input("Ingrese el dia: "))
+mes=int(input("Ingrese el mes: "))
+anio=int(input("Ingrese el año: "))
+
+fecha=FuncionesPrograma.getFechaDate(anio,mes,dia)
+print(fecha)
+
+#Ejercicio Nro 20
+
+class Fraccion:
+    def __init__(self, numerador, denominador):
+        self.numerador = numerador
+        self.denominador = denominador
+
+    @staticmethod
+    def sumarFracciones(f1, f2):
+        num = f1.numerador * f2.denominador + f2.numerador * f1.denominador
+        den = f1.denominador * f2.denominador
+        return Fraccion(num, den)
+
+    @staticmethod
+    def restarFracciones(f1, f2):
+        num = f1.numerador * f2.denominador - f2.numerador * f1.denominador
+        den = f1.denominador * f2.denominador
+        return Fraccion(num, den)
+
+    @staticmethod
+    def multiplicarFracciones(f1, f2):
+        num = f1.numerador * f2.numerador
+        den = f1.denominador * f2.denominador
+        return Fraccion(num, den)
+
+    @staticmethod
+    def dividirFracciones(f1, f2):
+        num = f1.numerador * f2.denominador
+        den = f1.denominador * f2.numerador
+        return Fraccion(num, den)
+
+    def __str__(self):
+        return f"{self.numerador}/{self.denominador}"
+
+
+class OperacionesFraccion:
+    @staticmethod
+    def main():
+        n1 = int(input("Numerador 1: "))
+        d1 = int(input("Denominador 1: "))
+        n2 = int(input("Numerador 2: "))
+        d2 = int(input("Denominador 2: "))
+
+        f1 = Fraccion(n1, d1)
+        f2 = Fraccion(n2, d2)
+
+        print("Suma:", Fraccion.sumarFracciones(f1, f2))
+        print("Resta:", Fraccion.restarFracciones(f1, f2))
+        print("Multiplicación:", Fraccion.multiplicarFracciones(f1, f2))
+        print("División:", Fraccion.dividirFracciones(f1, f2))
+
+
+if __name__ == "__main__":
+    OperacionesFraccion.main()

@@ -1,6 +1,6 @@
 #Trabajo Practico Nro 3
 #Tema: Condicionales
-#Nomnbre: Andrés Fabre, Cristian 
+#Nomnbre: Andrés Fabre, Cristian Zuñiga
 
 #Ejercicio Nro 1
 edad=int(input("Ingresa tu edad: "))
@@ -92,87 +92,141 @@ if ultima_letra in vocal :
     print(palabra_final)
 else :
     print(palabra) 
-   
+
 #Ejercicio Nro 8
 
-#Pedimos los datos y la opcion que desea realizar
-nombre=input("Ingrese Su nombre.")
-opcion=int(input("Ingrese la opcion deseada:\nOpcion 1 si quiere su nombre en mayuscula\nOpcion 2 si lo quiere en minuscula\nOpcion 3 si solo quiere la primer letra en mayuscula. "))
+nombre=input("Ingrese su nombre: ")
+print(""" 1- Si quiere su nombre en mayúsculas.
+ 2- Si quiere su nombre en minúsculas.
+ 3- Si quiere su nombre con la primera letra mayúscula.""")
+menu=int(input("Ingrese el numero: "))
 
-# Usamos condicionales para transformar el nombre según la opción
-if opcion == 1:
-    print(f"tu nombre en mayuscula es {nombre.upper()}")   
-elif opcion == 2:
-    print(f"tu nombre en mayuscula es {nombre.lower()}")   
-elif opcion == 3:
-    print(f"tu nombre en mayuscula es {nombre.title()}")
-else:
-    print("la opcion ingresada no es correcta")
-    
+if menu==1 :
+    print(nombre.upper())
+elif menu==2 :
+    print(nombre.lower())
+elif menu==3 :
+    print(nombre.title())
+else :
+    print("No elijio una opción valida")
+
 #Ejercicio Nro 9
 
-#Pedimos los Datos
-magnitud = float(input("ingrese la magnitud del sismo. "))
-#Definimos la magnitud e imprimimos
-if magnitud < 3 :
-    print ("La MAgnitud del sismo fue Muy  leve ")
-elif magnitud >=3 and magnitud < 4:
-    print ("La MAgnitud del sismo fue Leve ")
-elif magnitud >=4 and magnitud < 5:
-    print ("La MAgnitud del sismo fue Moderado ")
-elif magnitud >=5 and magnitud < 6:
-    print ("La MAgnitud del sismo fue Fuerte")
-elif magnitud >=6 and magnitud < 7:
-    print ("La MAgnitud del sismo fue Muy Fuerte")
-else:
-    print ("La MAgnitud del sismo fue Extremo")
+magnitud=float(input("Ingrese la magnitud del terremonto: "))
+print("Clasificacion: ")
 
-#entiendo que el ejercicio pide Mayor o igual que 3  y menor que 4, etc pero el rango de diferencia es minima pero se podria ahorra codigo de la siguiente forma
-    """
-    if magnitud < 3:
-    print("La magnitud del sismo fue muy leve")
-elif magnitud < 4:
-    print("La magnitud del sismo fue leve")
-elif magnitud < 5:
-    print("La magnitud del sismo fue moderado")
-elif magnitud < 6:
-    print("La magnitud del sismo fue fuerte")
-elif magnitud < 7:
-    print("La magnitud del sismo fue muy fuerte")
-else:
-    print("La magnitud del sismo fue extremo")
-    """
+if magnitud<3 :
+    print("Muy leve")
+elif magnitud>=3 and magnitud<4 :
+    print("Ligeramente perceptible")
+elif magnitud>=4 and magnitud<5 :
+    print("Moderado")
+elif magnitud>=5 and magnitud<6 :
+    print("Fuerte")
+elif magnitud>=6 and magnitud<7 :
+    print("Muy Fuerte")
+else :
+    print("Exremo")
+
 
 #Ejercicio Nro 10
-#Pedimos los datos
-hemisferio = input("Ingrese hemisferio (N para norte / S para sur): ").upper()
-mes = input("Ingrese el NOMBRE del mes: ").lower()
-dia = int(input("Ingrese el día (1-31): "))
 
-# Determinar estación como si fuera hemisferio norte
-if (mes == "diciembre" and dia >= 21) or (mes == "enero") or (mes == "febrero") or (mes == "marzo" and dia <= 20):
-    estacion = "Invierno"
-elif (mes == "marzo" and dia >= 21) or (mes == "abril") or (mes == "mayo") or (mes == "junio" and dia <= 20):
-    estacion = "Primavera"
-elif (mes == "junio" and dia >= 21) or (mes == "julio") or (mes == "agosto") or (mes == "septiembre" and dia <= 20):
-    estacion = "Verano"
-elif (mes == "septiembre" and dia >= 21) or (mes == "octubre") or (mes == "noviembre") or (mes == "diciembre" and dia <= 20):
-    estacion = "Otoño"
-else:
-    estacion = "Mes inválido"
+dia=int(input("Ingresa el dia: "))
+mes=input("Ingresa el mes: ").lower()
+emisferio=input("Ingresa el Emisferio, N o S: ").upper()
 
-# Si está en hemisferio sur, se invierten las estaciones
-if hemisferio == "S":
-    if estacion == "Invierno":
-        estacion = "Verano"
-    elif estacion == "Verano":
-        estacion = "Invierno"
-    elif estacion == "Primavera":
-        estacion = "Otoño"
-    elif estacion == "Otoño":
-        estacion = "Primavera"
-elif hemisferio != "N":
-    estacion = "Hemisferio inválido"
-
-print("La estación es:", estacion)
-
+if emisferio=="N" :
+   if mes=="diciembre" :
+      if dia>=21 and dia<=31 :
+         print("Invierno")
+   elif mes=="enero" :
+      if dia>=1 and dia <=31 :
+         print("Invierno")
+   elif mes=="febrero" :
+      if dia>=1 and dia <=28 :
+         print("Invierno")
+   elif mes=="marzo" :
+      if dia>=1 and dia <=20 :
+         print("Invierno")
+      elif dia>=21 and dia<=31 :
+         print("Primavera")
+   elif mes=="abril" :
+      if dia>=1 and dia<=30 :
+         print("Primavera")
+   elif mes=="mayo" :
+      if dia>=1 and dia<=31 :
+         print("Primavera")
+   elif mes=="junio" :
+      if dia>=1 and dia<=20 :
+         print("Primavera")
+      elif dia>=21 and dia<=30 :
+         print("Verano")
+   elif mes=="julio" :
+      if dia>=1 and dia<=31 :
+         print("Verano")
+   elif mes=="agosto" :
+      if dia>=1 and dia<=31 :
+         print("Verano")
+   elif mes=="septiembre" :
+      if dia>=1 and dia<=20 :
+         print("Verano")
+      elif dia>=21 and dia<=30 :
+         print("Otoño")
+   elif mes=="octubre" :
+      if dia>=1 and dia<=31 :
+         print("Otoño")
+   elif mes=="noviembre" :
+      if dia>=1 and dia<=30 :
+         print("Otoño")
+   elif mes=="diciembre" :
+      if dia>=1 and dia<=20 :
+         print("Otoño")
+elif emisferio=="S" :
+   if mes=="diciembre" :
+      if dia>=21 and dia<=31 :
+         print("Verano")
+   elif mes=="enero" :
+      if dia>=1 and dia <=31 :
+         print("Verano")
+   elif mes=="febrero" :
+      if dia>=1 and dia <=28 :
+         print("Verano")
+   elif mes=="marzo" :
+      if dia>=1 and dia <=20 :
+         print("Verano")
+      elif dia>=21 and dia<=31 :
+         print("Otoño")
+   elif mes=="abril" :
+      if dia>=1 and dia<=30 :
+         print("Otoño")
+   elif mes=="mayo" :
+      if dia>=1 and dia<=31 :
+         print("Otoño")
+   elif mes=="junio" :
+      if dia>=1 and dia<=20 :
+         print("Otoño")
+      elif dia>=21 and dia<=30 :
+         print("Invierno")
+   elif mes=="julio" :
+      if dia>=1 and dia<=31 :
+         print("Invierno")
+   elif mes=="agosto" :
+      if dia>=1 and dia<=31 :
+         print("Invierno")
+   elif mes=="septiembre" :
+      if dia>=1 and dia<=20 :
+         print("Invierno")
+      elif dia>=21 and dia<=30 :
+         print("Primavera")
+   elif mes=="octubre" :
+      if dia>=1 and dia<=31 :
+         print("Primavera")
+   elif mes=="noviembre" :
+      if dia>=1 and dia<=30 :
+         print("Primavera")
+   elif mes=="diciembre" :
+      if dia>=1 and dia<=20 :
+         print("Primavera")
+else :
+   print("Fecha incorrecta")
+      

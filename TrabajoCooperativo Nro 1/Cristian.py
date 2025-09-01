@@ -79,3 +79,25 @@ if palabra1 == palabra2:
     print("las frases son identicas")
 else:
     print("las Frases son diferentes") 
+    
+#13- Pedir el ingreso de dos cadenas por por teclado, indicar si la segunda cadena se 
+#encuentra dentro de la primera.  
+
+cad1 = input("Ingrese la primera cadena: ")
+cad2 = input("Ingrese la segunda cadena: ")
+
+if cad1.count(cad2) > 0:
+    print("La segunda cadena SE ENCUENTRA dentro de la primera.")
+else:
+    print("La segunda cadena NO se encuentra dentro de la primera.")
+
+#15- Indique que sucede si realizo la siguiente declaración de variable:  
+#x = None print(x)  
+#Explique y ejemplifique el uso de None 
+# None es un objeto especial que representa la ausensia de un valor o un valor nulo
+
+resultado = None #se inicializa pero no se asigna valor
+resultado = 25
+
+
+

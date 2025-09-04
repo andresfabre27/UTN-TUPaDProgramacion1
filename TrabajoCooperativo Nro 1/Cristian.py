@@ -71,7 +71,7 @@ for caracter in cadena:
 print()  # para dejar una línea vacía al final
 
 #11- Pedir dos palabras por teclado, indicar si son iguales. 
-"""
+
 palabra1 =input("Ingrese la primer palabra")
 palabra2 =input("Ingrese la segunda palabra")
 
@@ -95,9 +95,138 @@ else:
 #x = None print(x)  
 #Explique y ejemplifique el uso de None 
 # None es un objeto especial que representa la ausensia de un valor o un valor nulo
+#Se usa como valor por defecto en funciones cuando no se devuelve nada.
 
 resultado = None #se inicializa pero no se asigna valor
 resultado = 25
 
+#La función imprime el saludo, pero como no hay return, su valor es None.
+def saludar():
+    print("Hola!")
+
+resultado = saludar()
+print(resultado)  
+
+"""
+#17- Cree una clase FuncionesPrograma y codifique una función estática getFechaString 
+#que reciba como parámetro una fecha y retorne la fecha como una cadena literal.  
+#Ejemplo recibo 15/10/1900, la salida debe ser 
+#Quince de Octubre de mil novecientos. 
+#Cree una clase Principal que contenga un método main y haga uso de la función 
+#getFechaString. 
+from datetime import datetime
+from num2words import num2words #hay qye instalar esta libreria, pip install num2words 
 
 
+
+class FuncionesPrograma:
+    @staticmethod
+    def getFechaString(fecha_str: str) -> str:
+        # Diccionarios de días y meses
+        dias = {
+            1: "Uno", 2: "Dos", 3: "Tres", 4: "Cuatro", 5: "Cinco",
+            6: "Seis", 7: "Siete", 8: "Ocho", 9: "Nueve", 10: "Diez",
+            11: "Once", 12: "Doce", 13: "Trece", 14: "Catorce", 15: "Quince",
+            16: "Dieciséis", 17: "Diecisiete", 18: "Dieciocho", 19: "Diecinueve", 20: "Veinte",
+            21: "Veintiuno", 22: "Veintidós", 23: "Veintitrés", 24: "Veinticuatro", 25: "Veinticinco",
+            26: "Veintiséis", 27: "Veintisiete", 28: "Veintiocho", 29: "Veintinueve", 30: "Treinta",
+            31: "Treinta y uno"
+        }
+
+        meses = {
+            1: "Enero", 2: "Febrero", 3: "Marzo", 4: "Abril",
+            5: "Mayo", 6: "Junio", 7: "Julio", 8: "Agosto",
+            9: "Septiembre", 10: "Octubre", 11: "Noviembre", 12: "Diciembre"
+        }
+
+        # convertir y asignar valores 
+        fecha = datetime.strptime(fecha_str, "%d/%m/%Y") #metodo que convierte un string de fecha en numero (objeto) segun el orden asignado
+        dia = dias[fecha.day]
+        mes = meses[fecha.month]
+        anio_literal = num2words(fecha.year, lang='es') #encontre un metodo que transorma cualquier año en letra, disculpe que no iba a hacer un diccionario con todos los años, y no podia dejarlo con un par de años
+
+        return f"{dia} de {mes} de {anio_literal}"
+
+#metodo main static
+class Principal:
+    @staticmethod
+    def main():
+        fecha_entrada = "26/10/1995"
+        print(FuncionesPrograma.getFechaString(fecha_entrada))
+
+#metodo main
+if __name__ == "__main__":
+    Principal.main()
+
+"""
+19- Cree una clase OperacionMatematica con dos atributos valor1 y valor2 y un 
+atributo de nombre operación. 
+Agregue a la clase los siguientes 5 métodos e implemente la lógica correspondiente:  
+sumarNumeros() 
+restarNumeros() 
+multiplicarNumeros() 
+dividirNumeros() 
+El quinto método será el siguiente:  
+aplicarOperacion(operacion){  
+…………………..  
+}  
+Cree una clase Calculo que contenga un método main, donde cree una instancia de la 
+clase OperacionMatematica, asigne 2 valores para las variables de la instancia y 
+ejecute la función aplicarOperacion, pasando como parámetro primero “+”, después “
+”, a continuación “*” y finalmente “/”. Muestre por pantalla el resultado de las 
+operaciones. 
+
+class OperacionMatematica:
+    def __init__(self, valor1, valor2):
+        self.valor1 = valor1
+        self.valor2 = valor2
+        self.operacion = None
+
+    def sumarNumeros(self):
+        return self.valor1 + self.valor2
+
+    def restarNumeros(self):
+        return self.valor1 - self.valor2
+
+    def multiplicarNumeros(self):
+        return self.valor1 * self.valor2
+
+    def dividirNumeros(self):
+        if self.valor2 != 0:
+            return self.valor1 / self.valor2
+        else:
+            return "Error: división por cero"
+
+    def aplicarOperacion(self, operacion):
+        self.operacion = operacion
+        if operacion == "+":
+            return self.sumarNumeros()
+        elif operacion == "-":
+            return self.restarNumeros()
+        elif operacion == "*":
+            return self.multiplicarNumeros()
+        elif operacion == "/":
+            return self.dividirNumeros()
+        else:
+            return "Operación no válida"
+
+
+class Calculo:
+    @staticmethod
+    def main():
+        # Crear instancia de OperacionMatematica
+        op = OperacionMatematica(10, 5)
+
+        # Probar operaciones
+        print("Suma:", op.aplicarOperacion("+"))
+        print("Resta:", op.aplicarOperacion("-"))
+        print("Multiplicación:", op.aplicarOperacion("*"))
+        print("División:", op.aplicarOperacion("/"))
+
+
+# Ejecutar main
+if __name__ == "__main__":
+    Calculo.main()
+"""
+
+#codigo comentado para probar el codigo en bloques y que ninguna variable repetida entre en conflicto

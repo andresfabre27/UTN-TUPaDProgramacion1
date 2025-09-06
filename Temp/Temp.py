@@ -1,7 +1,5 @@
-#Ejercicio Nro 4
+#Ejercicio Nro 10
 
-animales = ["perro", "gato", "conejo", "pez"]
-print(animales)
-animales[1]="loro"
-animales[-1]="oso"
-print(animales)
+lista_anidada=[15,True,[25.5,57.9,30.6],False]
+
+print(lista_anidada)

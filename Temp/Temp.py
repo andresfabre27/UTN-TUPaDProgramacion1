@@ -1,11 +1,7 @@
+#Ejercicio Nro 4
 
-
-#probando matrices
-
-matriz=[[1,2],[3,4]]
-
-for i in range(len(matriz)):
-
-    print(matriz[i])
-print(len(matriz[1]))
-
+animales = ["perro", "gato", "conejo", "pez"]
+print(animales)
+animales[1]="loro"
+animales[-1]="oso"
+print(animales)

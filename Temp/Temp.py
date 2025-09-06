@@ -1,16 +1,11 @@
-#probando comandos de git
-print("Hola queeeeridooooo")
-print("Probando1")
-print("Probando2")
-print("Probando5")
-print("Probando6")
-print("Probando7")
-print("Probando8")
-print("Probando9")
-print("Probando10")
-print("Probando11")
-print("Probando12")
-print("Probando13")
-print("Probando14")
-print("Probando15")
-print("Probando 16")
+
+
+#probando matrices
+
+matriz=[[1,2],[3,4]]
+
+for i in range(len(matriz)):
+
+    print(matriz[i])
+print(len(matriz[1]))
+

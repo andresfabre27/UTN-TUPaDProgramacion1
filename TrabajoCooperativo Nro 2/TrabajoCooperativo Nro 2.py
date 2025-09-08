@@ -58,7 +58,7 @@ print(f"Hay {impares} numeros inpares")
 
 numeros = list(map(int, input("Ingrese números separados por espacio: ").split()))
 
-# Usar comprensión de listas para separar pares e impares
+ #Usar comprensión de listas para separar pares e impares
 pares = [n for n in numeros if n % 2 == 0]
 impares = [n for n in numeros if n % 2 != 0]
 
@@ -146,6 +146,29 @@ print(f"Lista 1: {lista1}")
 print(f"Lista 2: {lista2}")
 print(f"Lista SUMA: {lista_suma}")
 
+#Ejercicio Nro 13
+
+"""NumPy, o "Numerical Python", es una biblioteca de Python que sirve para realizar cálculos numéricos y científicos 
+de alta eficiencia, especialmente con arreglos multidimensionales (arrays). Es fundamental en ciencia de datos, inteligencia 
+artificial y machine learning, ya que permite manejar grandes volúmenes de datos y realizar operaciones matemáticas 
+complejas de forma mucho más rápida y optimizada que con las listas de Python estándar. """
+"""""
+import numpy as np # Importamos la librería NumPy y la renombramos 'np'
+
+# Creamos un array de Python
+lista_python = [1, 2, 3, 4, 5]
+
+# Convertimos la lista a un array de NumPy
+array_numpy = np.array(lista_python)
+
+# Realizamos una operación matemática (multiplicar cada elemento por 2)
+resultado = array_numpy * 2
+
+print(array_numpy)
+print(resultado)
+
+"""
+
 #--------------------------------------------------------------------------------------------------------
 #TP Listas Bidimensionales
 #--------------------------------------------------------------------------------------------------------
@@ -169,7 +192,7 @@ matriz = [
 
 suma = 0
 
-# Bucle anidado
+ # Bucle anidado
 for fila in matriz:
     for elemento in fila:
         suma += elemento
@@ -197,7 +220,7 @@ matriz = [
 filas = len(matriz)
 columnas = len(matriz[0])
 
-# Crear matriz vacía para la transpuesta (columnas x filas)
+ # Crear matriz vacía para la transpuesta (columnas x filas)
 transpuesta = []
 for j in range(columnas):
     nueva_fila = []
@@ -212,3 +235,36 @@ for fila in matriz:
 print("\nMatriz transpuesta:")
 for fila in transpuesta:
     print(fila)
+
+#Ejercicio Nro 6
+
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+escalar=(int(input("Ingrese el escalar: ")))
+matris_por_escalar = [[matriz[i][j]*escalar for j in range(len(matriz))] for i in range(len(matriz[0]))]
+
+print(f"La mastriz original es: {matriz}")
+print(f"La matriz por el escalar es: {matris_por_escalar}")
+
+#Ejercicio Nro 8
+
+n=int(input("Ingrese el tamaño de la matriz: "))
+identidad = [[1 if i == j else 0 for j in range(n)] for i in range(n)]
+print(f"La matriz identidad es: {identidad}")
+
+#Ejercicio Nro 10
+
+n=int(input("Ingrese el tamaño de la matriz nxn: "))
+matriz = [[int(input(f"Ingrese un numero {i} {j} : ")) for j in range(n)] for i in range(n)]
+
+transpuesta = [[matriz[j][i] for j in range(len(matriz))] for i in range(len(matriz[0]))]
+print(f"La matriz original es: {matriz}")
+print(f"La matriz transpuesta es: {transpuesta}")
+
+if transpuesta==matriz:
+    print("La matriz es simétrica")
+else:
+    print("La matriz no es simetrica")

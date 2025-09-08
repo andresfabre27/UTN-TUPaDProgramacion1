@@ -1,20 +1,9 @@
-#Ejercicio Nro 14
 
-lista1=list(range(0,10,2))
-lista2=list(range(0,20,4))
-lista_suma=[]
+numeros = list(map(int, input("Ingrese números separados por espacio: ").split()))
 
-#for i in range(5):
-#    lista_suma.append(lista1[i]+lista2[i])
+# Usar comprensión de listas para separar pares e impares
+pares = [n for n in numeros if n % 2 == 0]
+impares = [n for n in numeros if n % 2 != 0]
 
-for i in range(5):
-    lista_suma[i]=i*i
-print(f"Lista 1: {lista1}")
-print(f"Lista 2: {lista2}")
-print(f"Lista SUMA: {lista_suma}")
-
-
-
-
-
-
+print("Cantidad de pares:", len(pares))
+print("Cantidad de impares:", len(impares))

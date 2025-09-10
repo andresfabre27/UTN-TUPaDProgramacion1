@@ -108,7 +108,7 @@ def filtrar_primos():
 # Ejecutamos la función
 filtrar_primos()
 
-#Escribe un programa que permita al usuario ingresar una lista y un número, y cuente 
+#11Escribe un programa que permita al usuario ingresar una lista y un número, y cuente 
 #cuántas veces aparece ese número en la lista. 
 
 entrada = input("Ingresa una lista de números separados por espacios: ")
@@ -165,13 +165,15 @@ Indexación y selección
 | `arr[arr > 5]`     | Filtrado booleano (elementos mayores a 5).             |
 
 Transformación y reestructuración
-| Función                           | Descripción                             |
-| --------------------------------- | --------------------------------------- |
-| `.reshape(filas, columnas)`       | Cambia la forma del arreglo.            |
-| `.flatten()`                      | Convierte un arreglo 2D o más en 1D.    |
-| `np.transpose(arr)` o `arr.T`     | Transpone la matriz (filas ↔ columnas). |
-| `np.concatenate((a,b), axis=0/1)` | Une arreglos por filas o columnas.      |
-| `np.stack((a,b), axis=0/1)`       | Apila arreglos en una nueva dimensión.  |
+| Función                           | Descripción                                |
+| --------------------------------- | -------------------------------------------|
+| `.reshape(filas, columnas)`       | Cambia la forma del arreglo.               |
+| `.flatten()`                      | Convierte un arreglo 2D o más en 1D.       |
+| `np.transpose(arr)` o `arr.T`     | Transpone la matriz (filas ↔ columnas).    |
+| `np.concatenate((a,b), axis=0/1)` | Une arreglos por filas o columnas.         |
+| `np.stack((a,b), axis=0/1)`       | Apila arreglos en una nueva dimensión.     |
+| `np.fliplr()`                     | “voltea” la matriz de izquierda a derecha  |
+| `np.identity()`                   | Crea una matriz identidad normal (1 en la diagonal principal). |
 
 Otras funciones útiles
 | Función                                                  | Descripción                                        |
@@ -186,7 +188,7 @@ Otras funciones útiles
 
 
 """
-#Crea una función que reciba dos parámetros: el número de filas y columnas. La función 
+#1Crea una función que reciba dos parámetros: el número de filas y columnas. La función 
 #debe generar una matriz de ese tamaño, donde los valores son números enteros 
 #consecutivos empezando desde 1. 
 
@@ -200,3 +202,70 @@ columnas = int(input("Ingresa el número de columnas: "))
 
 resultado = generar_matriz(filas, columnas)
 print(resultado)
+
+#3Modifica el programa anterior para que imprima la suma de cada fila de la lista 
+#bidimensional.
+
+lista_bidimencional = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]])
+
+suma_total = np.sum(lista_bidimencional)
+print(f"La suma total es: {suma_total}")
+
+#Suma por filas (axis=1 significa sumar en las columnas de cada fila)
+suma_filas = np.sum(lista_bidimencional, axis=1)
+for i, suma in enumerate(suma_filas, start=1):
+    print(f"La suma de la fila {i} es: {suma}")
+
+#5Escribe un programa que encuentre el valor más grande en una lista bidimensional.
+
+lista_bidimencional = np.array([
+    [1, 2, 3],
+    [10, 5, 6],
+    [7, 8, 9]])
+
+#Encontrar el valor máximo
+maximo = np.max(lista_bidimencional)
+print(f"El valor más grande en la lista bidimensional es: {maximo}")
+
+#7Escribe un programa que extraiga los elementos de la diagonal principal de una matriz 
+#cuadrada. 
+
+matriz = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]])
+
+#Extraer la diagonal principal
+diagonal = np.diag(matriz)
+
+print(f"La matriz es:\n{matriz}")
+print(f"La diagonal principal es: {diagonal}")
+
+#9Crea un programa que genere una matriz identidad inversa de tamaño n. 
+
+n = int(input("Ingrese el tamaño de la matriz identidad inversa: "))
+
+# Generar matriz identidad inversa
+matriz_identidad_inversa = np.fliplr(np.identity(n, dtype=int))
+
+print("La matriz identidad inversa es:")
+print(matriz_identidad_inversa)
+
+#11Escribe un programa que gire una lista bidimensional (matriz) 90 grados en el sentido 
+#de las agujas del reloj.
+
+matriz = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]])
+
+# Rotar 90° en sentido de las agujas del reloj k=-1 → 90° clockwise k=1 rota 90 antihorario
+matriz_rotada = np.rot90(matriz, k=-1)  
+
+print("Matriz original:")
+print(matriz)
+print("\nMatriz rotada 90° en sentido horario:")
+print(matriz_rotada)

@@ -57,3 +57,64 @@ def segundos_a_horas(segundos):
 
 segundos=int(input("Ingrese los segundos: "))
 print(f"Son {segundos_a_horas(segundos)} horas ")
+
+#Ejercicio Nro 6
+
+def tabla_multiplicar(numero):
+
+    for i in range(1,10):
+        print(f"{numero}x{i}={i*numero}")
+
+numero=int(input("Ingrese un numero: "))
+tabla_multiplicar(numero)
+
+#Ejercicio Nro 7
+
+def operaciones_basicas(a, b):
+   suma=a+b
+   resta=a-b
+   division=a/b
+   multiplicacion=a*b
+   
+   return suma,resta,division, multiplicacion
+
+print("Ingrese 2 numeros")
+numero1=float(input("Ingrese el primer numero: "))
+numero2=float(input("Ingrese el segundo numero: ")) 
+
+print(operaciones_basicas(numero1,numero2))
+
+#Ejercicio Nro 8
+
+def calcular_imc(peso, altura):
+    
+    return peso/(altura*altura)
+
+print("Calculadora de iMC")
+peso=float(input("Ingresa tu peso: "))
+altura=float(input("Ingresa tu estatura: "))
+
+print(f"Tu IMC es: {calcular_imc(peso,altura)}")
+
+#Ejercicio Nro 9
+
+def celsius_a_fahrenheit(celsius):
+    F = (celsius * 9/5) + 32
+
+    return F
+
+temperatura=int(input("Ingrese los grados celsius: "))
+print(f"Son {celsius_a_fahrenheit(temperatura)} grados Fahrenheit")
+
+#Ejercicio Nro 10
+
+def calcular_promedio(a, b, c):
+
+    return (a+b+c)/3
+
+print("Ingrese 3 numeros para calcular el promedio")
+numero1=float(input("Ingrese el primer numero: "))
+numero2=float(input("Ingrese el segundo numero: "))
+numero3=float(input("Ingrese el tercer numero: "))
+
+print(f"El promedio es: {calcular_promedio(numero1,numero2,numero3)}")

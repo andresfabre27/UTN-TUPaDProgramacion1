@@ -39,8 +39,8 @@ while apagar != True:
                     golosinas[verificar_golosina-1][2]-=1
                     if any(golosinas[verificar_golosina-1][1] in sublista for sublista in golosinasPedidas): #Verificamos si golosina esta en golosinasPedidas
                          nombre_busqueda=golosinas[verificar_golosina-1][0]
-                         for i in range(len(golosinas)):        #Buscamos el indice de la fila
-                             if nombre_busqueda in golosinas[i]:
+                         for i in range(len(golosinasPedidas)):        #Buscamos el indice de la fila
+                             if nombre_busqueda==golosinasPedidas[i][0]:
                                  indice_busqueda=i
                                                          
                          golosinasPedidas[indice_busqueda][2]+=1 #Aumentamos +1 la cantidad de la golosina
@@ -99,8 +99,8 @@ while apagar != True:
     elif menu=="D":
      
         apagar=True
-        for codigo, nombre, stock in golosinasPedidas:
-            print(f"Código: {codigo} | {nombre} | Stock: {stock}")
+        for codigo, nombre, cantidad_pedida in golosinasPedidas:
+            print(f"Código: {codigo} | {nombre} | Cantidad Pedida: {cantidad_pedida}")
 
     else:
 

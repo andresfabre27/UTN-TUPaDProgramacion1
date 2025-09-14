@@ -60,7 +60,8 @@ while apagar != True:
 
     elif menu=="B":
 
-        print(golosinas)
+        for codigo, nombre, stock in golosinas:
+         print(f"Código: {codigo} | {nombre} | Stock: {stock}")
      
     elif menu=="C":
      
@@ -98,7 +99,8 @@ while apagar != True:
     elif menu=="D":
      
         apagar=True
-        print(golosinasPedidas)
+        for codigo, nombre, stock in golosinasPedidas:
+            print(f"Código: {codigo} | {nombre} | Stock: {stock}")
 
     else:
 

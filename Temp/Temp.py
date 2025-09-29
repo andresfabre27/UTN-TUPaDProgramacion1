@@ -1,19 +1,14 @@
-#Ejercicio Nro 10
+#Ejercicio Nro 7
 
-paises = {
-    "Argentina": "Buenos Aires",
-    "Chile": "Santiago",
-    "Uruguay": "Montevideo",
-    "Brasil": "Brasilia",
-    "Paraguay": "Asunción"
-}
+parcial1={"Andres","Cristian","Luciano","Federico","Yanina","Elio","Rosa","Anibal"}
+parcial2={"Andres","Luciano","Rosa","Teresa","Silvana"}
 
-# Construir nuevo diccionario: capitales -> países
-capitales = {capital: pais for pais, capital in paises.items()}
 
-# Mostrar resultado
-print("Diccionario original (país -> capital):")
-print(paises)
 
-print("\nDiccionario invertido (capital -> país):")
-print(capitales)
+ambos_parciales=parcial1&parcial2
+solo_uno_de_los_dos=parcial1^parcial2
+al_menos_un_parcial=parcial1|parcial2
+
+print(f"Aprobaron ambos parciales: {ambos_parciales}")
+print(f"Aprobaron solo uno de los dos parciales: {solo_uno_de_los_dos}")
+print(f"Aprobo al menos uno: {al_menos_un_parcial}")

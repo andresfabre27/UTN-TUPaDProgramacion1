@@ -50,7 +50,17 @@ else:
 frase=input("Ingrese una frase: ")
 
 conjunto=set(frase.split())
+lista=frase.split()
 print(conjunto)
+diccionario={}
+
+for palabra in lista:
+    if palabra in diccionario:
+        diccionario[palabra]+=1
+    else:
+        diccionario[palabra]=1
+
+print(diccionario)
 
 #Ejercicio Nro 6
 
@@ -71,34 +81,21 @@ for i in range(3):
 print(diccionario)
 print(f"Los promedios son: {promedio}")
 
+
 #Ejercicio Nro 7
 
-lista_alumnos=["Andres","Cristian","Luciano","Federico","Yanina","Elio","Rosa","Teresa","Silvana","Anibal","Juan","Nazareno"]
 parcial1={"Andres","Cristian","Luciano","Federico","Yanina","Elio","Rosa","Anibal"}
 parcial2={"Andres","Luciano","Rosa","Teresa","Silvana"}
-lista_ambos=[]
-lista_solo_uno=[]
-set_almenos_uno=[]
-
-print(f"Lista de alumnos: {lista_alumnos}")
-
-for nombre in lista_alumnos:
-    if nombre in parcial1 and nombre in parcial2:
-        lista_ambos.append(nombre)
-
-    if (nombre in parcial1 and nombre not in parcial2) or (nombre in parcial2 and nombre not in parcial1):
-        lista_solo_uno.append(nombre)
-    
-    if nombre in parcial1 or nombre in parcial2:
-        set_almenos_uno.append(nombre)
-    
 
 
-set_almenos_uno=set(set_almenos_uno)
 
-print(f"Alumos que aprobaron ambos: {lista_ambos}")
-print(f"Alumnos que aprobaron solo uno: {lista_solo_uno}")
-print(f"Alumnos que aprobaron almenos uno sin repetir: {set_almenos_uno}")
+ambos_parciales=parcial1&parcial2
+solo_uno_de_los_dos=parcial1^parcial2
+al_menos_un_parcial=parcial1|parcial2
+
+print(f"Aprobaron ambos parciales: {ambos_parciales}")
+print(f"Aprobaron solo uno de los dos parciales: {solo_uno_de_los_dos}")
+print(f"Aprobo al menos uno: {al_menos_un_parcial}")
 
 #Ejercicio Nr 8
 

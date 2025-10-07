@@ -80,11 +80,22 @@ def crear_lista(): #Creamos una lista
             almacen=linea.split(",")
             productos.append({"nombre":almacen[0].strip(),"precio":almacen[1].strip(),"cantidad":almacen[2].strip()})
 
-    print("Imprimimos la lista")
+    return productos
     
-    
-   
-        
+def actualizar_productos(productos):
+
+    with open(direccion, "w") as archivo:
+        for filas in productos:
+            temporal=list(filas.values())
+            contador=0   
+            for palabra in temporal:
+                archivo.write(palabra)
+                if contador<2:
+                    archivo.write(",")
+                contador+=1
+            archivo.write("\n")
+
+
         
 def mostrar_archivo(): #Mostramos el archivo
 
@@ -130,14 +141,26 @@ while menu==False:
     opcion=int(input("1- Mostrar Archivo 2-Argregar Producto 3-Buscar Producto 4-Salir \n")) 
     if opcion==1:
         mostrar_archivo()
+        actualizar_productos(crear_lista())
     
     elif opcion==2:
         agregar_producto()
+        actualizar_productos(crear_lista())
+
     
     elif opcion==3:
         buscar_producto()
+        actualizar_productos(crear_lista())
 
     elif opcion==4:
         menu=True
     else:
         print("Opcion incorrecta, intente nuevamente")
+        
+
+
+
+
+
+
+    

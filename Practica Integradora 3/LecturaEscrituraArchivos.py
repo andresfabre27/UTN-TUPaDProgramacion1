@@ -22,7 +22,7 @@ def agregar_alumno(diccionario):
     while True:
         nombre=input("Ingrese el nombre: ")
         if nombre.isalpha():
-            break
+            break        
         else:
             print("Debe Ingresar unicamente caracteres")
     while True:
@@ -78,27 +78,31 @@ generar_diccionario()
 
 while menu==False:
     print("    -----------------------------------")
-    opcion=int(input("""    1-Ver alumnos  
+    opcion=input("""    1-Ver alumnos  
     2-Agregar alumno 
     3-Generar y mostrar archivo de aprobados
     4-Salir
-    -----------------------------------\n"""))
+    -----------------------------------\n""")
     
-    if opcion==1:
+    if opcion=='1':
 
         leer_alumnos(direccion)
 
-    elif opcion==2:
+    elif opcion=='2':
         
         agregar_alumno(generar_diccionario())
 
 
-    elif opcion==3:
+    elif opcion=='3':
 
         guardar_aprobados()
 
-    elif opcion==4:
+    elif opcion=='4':
         menu=True
+
+    elif not opcion:
+        print("El menu no puede ser un valor vacio")
+        
     
     else:
         print("Error de menu, intente nuevamente")

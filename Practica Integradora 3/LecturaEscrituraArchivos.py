@@ -50,6 +50,7 @@ def agregar_alumno(diccionario):
     
     with open(direccion, "a") as archivo:
         archivo.write(f"{nombre};{apellido};{legajo};{nota_promedio}\n")
+        print("Hecho¡¡")
 
 def guardar_aprobados():
     with open(direccion, "r") as archivo_lectura, open(direccion2, "w") as archivo_escritura:

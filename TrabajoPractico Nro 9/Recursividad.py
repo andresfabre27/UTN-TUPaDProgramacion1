@@ -1,5 +1,5 @@
 #Trabajo Practico Nro 9
-#Tema: Aplicaciones de le recursividad
+#Tema: Aplicaciones de la recursividad
 #Nombre: Daniel Andrés Fabre
 
 #Ejercicio Nro 1
@@ -50,3 +50,5 @@ def convertir_binario(numero):
 
 numero=int(input("Ingrese un numero para convertirlo en binario: "))
 print(convertir_binario(numero))
+
+#Ejercicio Nro 6

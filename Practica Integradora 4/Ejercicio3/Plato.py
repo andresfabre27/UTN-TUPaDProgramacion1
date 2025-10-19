@@ -1,4 +1,4 @@
-class plato:
+class Plato:
     def __init__(self, nombreCompleto, precio, esBebida):
 
         self.nombreCompleto=nombreCompleto

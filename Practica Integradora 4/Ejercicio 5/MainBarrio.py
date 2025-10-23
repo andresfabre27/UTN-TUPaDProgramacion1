@@ -12,19 +12,62 @@ class MainBarrio:
         while True:
             print("\n--- Nueva Vivienda ---")
             calle = input("Calle: ")
-            numero = int(input("Número: "))
+
+            while True:
+                try:
+                    numero = int(input("Número: "))
+                    if numero <= 0:
+                        print("Error: el número debe ser positivo.")
+                        continue
+                    break
+                except ValueError:
+                    print("Error: ingrese un número entero válido.")
+
             manzana = input("Manzana: ")
-            nroCasa = int(input("Número de casa: "))
-            superficieTerreno = float(input("Superficie del terreno (m²): "))
+
+            while True:
+                try:
+                    nroCasa = int(input("Número de casa: "))
+                    if nroCasa <= 0:
+                        print("Error: el número de casa debe ser positivo.")
+                        continue
+                    break
+                except ValueError:
+                    print("Error: ingrese un número entero válido para el número de casa.")
+                    
+            while True:
+                try:
+                    superficieTerreno = float(input("Superficie del terreno (m²): "))
+                    if superficieTerreno <= 0:
+                        print("Error: la superficie debe ser mayor a cero.")
+                        continue
+                    break
+                except ValueError:
+                    print("Error: ingrese un número válido para la superficie del terreno.")
 
             vivienda = Vivienda(calle, numero, manzana, nroCasa, superficieTerreno)
 
             while True:
                 print("\n--- Nueva Habitación ---")
                 nombre_hab = input("Nombre de la habitación (o 'FIN' para terminar): ")
+
                 if nombre_hab.upper() == "FIN":
-                    break
-                metros = float(input("Metros cuadrados: "))
+                    if len(vivienda.habitaciones) == 0:
+                        print("Debe agregar al menos una habitación antes de finalizar.")
+                        continue
+                    else:
+                        break
+                    
+                while True:
+                    try:
+                        metros = float(input("Metros cuadrados: "))
+                        if metros <= 0:
+                            print("Error: los metros deben ser mayores a cero.")
+                            continue
+                        break
+                    except ValueError:
+                        print("Error: ingrese un número válido para los metros cuadrados.")
+
                 habitacion = Habitacion(nombre_hab, metros)
                 vivienda.agregar_habitacion(habitacion)
 
@@ -33,8 +76,7 @@ class MainBarrio:
             continuar = input("\n¿Desea agregar otra vivienda? (SI/NO): ")
             if continuar.upper() != "SI":
                 break
-
-        # Mostrar resultados
+            
         print("\n----------- INFORME DEL BARRIO -----------")
         print(f"Barrio: {barrio.nombre}")
         print(f"Empresa Constructora: {barrio.empresaConstructora}")

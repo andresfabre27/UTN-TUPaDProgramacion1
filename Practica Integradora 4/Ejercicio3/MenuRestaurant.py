@@ -60,8 +60,9 @@ class MenuRestaurant:
                     print("Error, solo es posible SI/NO")
                     break
 
-        print("-------MENU-------")    
+        print("-------MENU-------")   
         for o in self.platos:
+              
              print(f"""{o.nombreCompleto}
 precio: $ {o.precio}    """)
              if o.esBebida==False:
@@ -69,9 +70,8 @@ precio: $ {o.precio}    """)
                   print("Nombre  Cantidad  Unidad de Medida")
                   for p in o.lista_de_ingredientes:
                       print(f" {p.nombre}    {p.cantidad}       {p.unidadDeMedida} ")
-                  print("------------------")
+             print("------------------")
              
-        print("------------------")
-
+    
 instanciaMain=MenuRestaurant()
 instanciaMain.Main()

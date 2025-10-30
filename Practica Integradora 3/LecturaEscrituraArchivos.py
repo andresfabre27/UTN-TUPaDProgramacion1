@@ -1,3 +1,4 @@
+import os
 
 def leer_alumnos(direccion):
 
@@ -69,9 +70,10 @@ def guardar_aprobados():
             print(linea)
 
 
-        
-direccion=r"c:\Users\andre\Documents\GitHub\UTN-TUPaDProgramacion1\Practica Integradora 3\alumnos.txt"
-direccion2=r"c:\Users\andre\Documents\GitHub\UTN-TUPaDProgramacion1\Practica Integradora 3\aprobados.txt"
+direccion=os.path.join(os.path.dirname(__file__), 'alumnos.txt')
+direccion2=os.path.join(os.path.dirname(__file__), 'aprobados.txt')
+#direccion=r"c:\Users\andre\Documents\GitHub\UTN-TUPaDProgramacion1\Practica Integradora 3\alumnos.txt"
+#direccion2=r"c:\Users\andre\Documents\GitHub\UTN-TUPaDProgramacion1\Practica Integradora 3\aprobados.txt"
 
 menu=False
 generar_diccionario()

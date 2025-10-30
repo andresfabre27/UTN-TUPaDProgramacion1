@@ -1,9 +1,4 @@
-numero=input("Ingrese un numero: ")
+lista=[1,2,3,4,5]
 
-#try:
-numero=int(numero)
-
-#except:
- #   print("Debe ingresar un numero entero")
-
-print(numero)
+print(lista[-1])
+print(lista[-2])

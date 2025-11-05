@@ -53,8 +53,8 @@ def mostrarPaises(listaPaises):
 #-----------------------------------------------------------    
 def buscarPaisPorNombre(listaPaises, nombreBuscado):
     paises_encontrados = []  #creamos una lista vacia para guardar los resultados
-    for pais in listaPaises: #recorremos la lista de paises
-        if nombreBuscado.lower() in pais.nombre.lower(): #buscamos ignorando mayusculas/minusculas
+    for pais in listaPaises: #recorremos la lista de paises 
+        if nombreBuscado.lower() in pais.nombre.lower(): #buscamos ignorando mayusculas/minusculas (clave el in en la linea busca el contenido de la cadena en otra cadena)
             paises_encontrados.append(pais)#si coincide lo agregamos a nuestra lista de resultados
             
     return paises_encontrados #Devolvemos la lista de resultados

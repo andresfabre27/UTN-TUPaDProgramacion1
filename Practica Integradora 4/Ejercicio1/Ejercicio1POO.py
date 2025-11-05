@@ -43,7 +43,7 @@ instancia2=matriz()
 while(True):
     
     while True:
-        temp=input("Ingrese el valor de la celda: ")
+        temp=input("Ingrese el valor de la celda o FIN para salir: ")
         if not temp:
             print("El valor no puede ser vacio")
         else:

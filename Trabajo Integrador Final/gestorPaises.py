@@ -195,8 +195,8 @@ def mostrarEstadisticas(estadisticas):
         promedioPob = estadisticas["promedioPoblacion"] #guardamos en variables los datos del diccionario
         promedioSup = estadisticas["promedioSuperficie"] #guardamos en variables los datos del diccionario
 
-        print(f"Promedio de Poblacion:   {promedioPob:,}") #mostramos el promedio de poblacion
-        print(f"Promedio de Superficie: {promedioSup:,} km²") #mostramos el promedio de superficie
+        print(f"Promedio de Poblacion:   {promedioPob:,.0f}") #mostramos el promedio de poblacion
+        print(f"Promedio de Superficie: {promedioSup:,.0f} km²") #mostramos el promedio de superficie
         
         print("\n--- Conteo por Continente ---")
         

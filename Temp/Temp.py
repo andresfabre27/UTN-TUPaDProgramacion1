@@ -1,4 +1,18 @@
-lista=[1,2,3,4,5]
+def convertir_binario(numero):
+   
+    if numero==1:
+        return "1"
+    
+    elif numero==0:
+        return "0"
 
-print(lista[-1])
-print(lista[-2])
+    else:
+       
+        resto=numero%2
+        total=str(resto)
+        return convertir_binario(numero//2)+total
+    
+
+numero=int(input("Ingrese un numero: "))
+      
+print(convertir_binario(numero))

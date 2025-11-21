@@ -52,20 +52,22 @@ print(f"{base} elevado a la {exponente} es: {resultado}")
 #EJercicio Nro 4
 
 def convertir_binario(numero):
-    lista=[]
-
-    while(numero>0):
-        
-        resto=numero%2
-        lista.append(resto)
-        numero=numero//2
+   
+    if numero==1:
+        return "1"
     
-    invertido=lista[::-1]
-    cadena_de_numeros = "".join(str(x) for x in invertido)
-    return cadena_de_numeros
+    elif numero==0:
+        return "0"
 
+    else:
+       
+        resto=numero%2
+        total=str(resto)
+        return convertir_binario(numero//2)+total
+    
 
-numero=int(input("Ingrese un numero para convertirlo en binario: "))
+numero=int(input("Ingrese un numero: "))
+      
 print(convertir_binario(numero))
 
 #Ejercicio Nro 5

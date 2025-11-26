@@ -1,18 +1,18 @@
-def convertir_binario(numero):
-   
-    if numero==1:
-        return "1"
-    
-    elif numero==0:
-        return "0"
 
-    else:
-       
-        resto=numero%2
-        total=str(resto)
-        return convertir_binario(numero//2)+total
-    
+original={"Argentina":"Buenos Aires",
+          "Chile":"Santiago",
+          "Peru":"Lima"
+          
+          }
 
-numero=int(input("Ingrese un numero: "))
-      
-print(convertir_binario(numero))
+print(original)
+
+invertido={}
+
+for clave,valor in original.items():
+    invertido[valor]=clave
+
+print(invertido)
+
+
+

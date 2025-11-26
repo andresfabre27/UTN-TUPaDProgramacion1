@@ -55,7 +55,7 @@ print(conjunto)
 diccionario={}
 
 for palabra in lista:
-    if palabra in diccionario:
+    if palabra in diccionario.keys():
         diccionario[palabra]+=1
     else:
         diccionario[palabra]=1
@@ -81,6 +81,30 @@ for i in range(3):
 print(diccionario)
 print(f"Los promedios son: {promedio}")
 
+#Ejercicio Nro 6 otra forma
+
+diccionario={}
+temporal=[]
+
+for fila in range(3):
+    nombre=input("Ingresa el nombre del alumno: ")
+    for columna in range(3):
+        temporal.append(int(input(f"Ingresa la nota {columna+1}: ")))
+    temporal2=tuple(temporal)
+    diccionario[nombre]=temporal2
+    temporal=[]
+
+print(diccionario)
+
+for fila in diccionario.keys():
+    promedio=0
+    for columna in diccionario[fila]:
+
+        promedio+=columna
+    promedio/=3
+    print(f"Alumno: {fila}, promedio= {promedio}")
+    
+
 
 #Ejercicio Nro 7
 
@@ -89,17 +113,20 @@ parcial2={"Andres","Luciano","Rosa","Teresa","Silvana"}
 
 
 
-ambos_parciales=parcial1&parcial2
-solo_uno_de_los_dos=parcial1^parcial2
-al_menos_un_parcial=parcial1|parcial2
+ambos_parciales=parcial1&parcial2 #interseccion
+solo_uno_de_los_dos=parcial1^parcial2 #diferencia simetrica (alt 94)
+al_menos_un_parcial=parcial1|parcial2 #Union
 
-print(f"Aprobaron ambos parciales: {ambos_parciales}")
-print(f"Aprobaron solo uno de los dos parciales: {solo_uno_de_los_dos}")
-print(f"Aprobo al menos uno: {al_menos_un_parcial}")
 
+print(f"Aprobaron ambos parciales: {ambos_parciales}") 
+print(f"Aprobaron solo uno de los dos parciales: {solo_uno_de_los_dos}") 
+print(f"Aprobo al menos uno: {al_menos_un_parcial}") 
 #Ejercicio Nr 8
 
-diccionario={}
+diccionario={"Fideo" : 45,
+              "Azucar": 30,
+              "Cafe":40,
+              "Cocacola": 15 }
 
 salir=False
 
@@ -109,7 +136,7 @@ while(salir!=True):
 
    if menu==1:
       stock=input("Ingrese el nombre del producto: ")
-      if stock in diccionario:
+      if stock in diccionario.keys():
          print(diccionario[stock])
 
       else:
@@ -117,7 +144,7 @@ while(salir!=True):
 
    elif menu==2:
       stock=input("Ingrese el nombre del producto: ")
-      if stock in diccionario:
+      if stock in diccionario.keys():
          cantidad=int(input("Ingrese la cantidad a agregar: "))    
          diccionario[stock]+=cantidad
          print("Hecho")
@@ -127,7 +154,7 @@ while(salir!=True):
 
    elif menu==3:
       stock=input("Ingrese el nombre del producto a agregar: ")
-      if stock in diccionario:
+      if stock in diccionario.keys():
          print("El producto ya existe")
       else:
          cantidad=int(input("Ingrese la cantidad a agregar: "))
@@ -176,3 +203,20 @@ print(paises)
 
 print("\nDiccionario invertido (capital -> país):")
 print(capitales)
+
+#Ejercicio Nro 10 Otra forma
+
+original={"Argentina":"Buenos Aires",
+          "Chile":"Santiago",
+          "Peru":"Lima"
+          
+          }
+
+print(original)
+
+invertido={}
+
+for clave,valor in original.items():
+    invertido[valor]=clave
+
+print(invertido)

@@ -1,94 +1,91 @@
+#Ejercicio 3
+
 import os
 
 direccion=os.path.join(os.path.dirname(__file__), 'productos.txt')
 
-def cargar_en_diccionario():
+productos=[]
 
-    lista=[]
-
+def cargar_productos_lista(productos):
+    productos.clear()
     with open(direccion,"r") as archivo:
         for linea in archivo:
             temp=linea.split(",")
-            diccionario={
-            "nombre":temp[0],
-            "precio":temp[1],
-            "cantidad":temp[2]
-            }
-            lista.append(diccionario)
-            
-    guardar_productos_actualizados(lista)
-    
-def guardar_productos_actualizados(lista):
+            diccionario={} 
+            diccionario["Producto"]=temp[0]
+            diccionario["Precio"]=temp[1]
+            diccionario["Cantidad"]=temp[2].strip()
+            productos.append(diccionario)
+
+def actualizar_productos(productos):
 
     with open(direccion,"w") as archivo:
+        for diccionario in productos:
+            archivo.write(f"{diccionario['Producto']},{diccionario['Precio']},{diccionario['Cantidad']}\n")
+
         
-        for linea in lista:
-            
-            archivo.write(f"{linea["nombre"].strip()},{linea["precio"].strip()},{linea["cantidad"].strip()}\n")
-            
+menu=True
 
 
 
-def agregar_producto(nombre,precio,cantidad):
-    with open(direccion,"a") as archivo:
+while menu==True:
+    
+    cargar_productos_lista(productos)
 
-        archivo.write(f"{nombre},{precio},{cantidad}\n")
+    print("A- Leer productos")
+    print("B- Agregar Producto")
+    print("C- Buscar producto")
+    print("D- Salir")
+    print("F- Mostrar Lista")
+    opcion=input().upper()
 
-def buscar_producto():
-
-    with open(direccion,"r") as archivo:
-        
-        encontrado=False
-        producto=input("Ingrese el nombre del producto: ")
-        for linea in archivo:
-            temp=linea.split(",")
-            if producto in temp:
-                print(f"Producto: {temp[0].strip()} | Precio: ${temp[1].strip()} | Cantidad: {temp[2].strip()}")
-                encontrado=True
-            
-        if encontrado==True:
-            pass
-        else:
-            print("Producto no encontrado")
-
-
-
-
-def mostrar_productos():
-    with open(direccion,"r") as archivo:
-
-        for linea in archivo:
-
-            temp=linea.split(",")
-            print(f"Producto: {temp[0].strip()} | Precio: ${temp[1].strip()} | Cantidad: {temp[2].strip()}")
-
-
-menu=False
-
-while menu==False:
-
-    opcion=input("A-Leer Productos B-Agregar Producto C-Buscar Producto D-Salir\n")
 
     if opcion=="A":
-        mostrar_productos()
-        cargar_en_diccionario()
+
+        with open(direccion,"r") as archivo:
+
+            for linea in archivo:
+                temp=linea.split(",")
+                print(f"Producto: {temp[0].strip()} | Precio: {temp[1].strip()} | Cantidad: {temp[2].strip()}")
+                
+        actualizar_productos(productos)
 
     elif opcion=="B":
-        nombre=input("Ingrese el nombre del producto: ")
-        precio=int(input("Ingrese el precio del producto: "))
-        cantidad=int(input("Ingrese la cantidad de productos: "))
 
-        agregar_producto(nombre,precio,cantidad)
-        cargar_en_diccionario()
+        with open(direccion,"a") as archivo:  
+            print("Agregar producto")
+            producto=input("Ingrese el nombre del producto: ")     
+            precio=input("Ingrese el precio del producto: ") 
+            cantidad=input("Ingrese la cantidad: ")
+            archivo.write(f"{producto},{precio},{cantidad}\n")
+            print("Producto agregado!!")
+        
+        cargar_productos_lista(productos)
+        actualizar_productos(productos)
 
     elif opcion=="C":
-        buscar_producto()
-        cargar_en_diccionario()
+        nombre=input("Ingrese el nombre del producto: ")
+        encontrado=None
+        for diccionario in productos:
+            if diccionario["Producto"]==nombre:
+                encontrado=True
+                print(diccionario)
+        if encontrado==None:
+            print("Producto no encontrado!!")
+        
+        actualizar_productos(productos)
 
     elif opcion=="D":
-        menu=True
+        menu=False
+    
+    elif opcion=="F":
+        print(productos)
 
     else:
-        print("Error de menu")
+        print("Error de Menu!!")
 
 
+
+
+
+    

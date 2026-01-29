@@ -254,7 +254,7 @@ while menu==False:
 
 #Ejercicio 6 mejor version
 
-mport os
+import os
 
 direccion=os.path.join(os.path.dirname(__file__), 'productos.txt')
 

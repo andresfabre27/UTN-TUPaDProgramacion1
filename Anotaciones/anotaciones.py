@@ -40,7 +40,7 @@ likes = {"color": "blue", "fruit": "apple", "pet": "dog"}
 for key in likes.keys():
     print(key)
 
-#Para imprimir los valores hacemos lo mismo con .value() en vez de .Keys()
+#Para imprimir los valores hacemos lo mismo con .values() en vez de .Keys()
 
 
 #2 formas de buscar en una matriz

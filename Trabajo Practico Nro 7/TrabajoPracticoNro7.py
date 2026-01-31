@@ -104,6 +104,27 @@ for fila in diccionario.keys():
     promedio/=3
     print(f"Alumno: {fila}, promedio= {promedio}")
     
+#Ejercicio Nro 6 otra forma mas facil
+
+diccionario={}
+promedio=[]
+
+for i in range(3):
+    print(f"Ingrese el nombre del {i+1} alumno")
+    nombre=input()
+    nota1=float(input("Ingresa la primera nota: "))
+    nota2=float(input("Ingresa la segunda nota: "))
+    nota3=float(input("Ingresa la tercer nota: "))
+    promedio.append((nota1+nota2+nota3)/3)
+
+    diccionario[nombre]=(nota1,nota2,nota3)
+
+print(diccionario)
+
+i=0
+for linea in diccionario.keys():
+    print(f"Promedio de {linea} = {promedio[i]}")
+    i+=1
 
 
 #Ejercicio Nro 7

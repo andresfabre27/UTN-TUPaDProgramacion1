@@ -1,7 +1,5 @@
-fideos,40,50
-azucar,30,60
-cafe,45,50
-Te,40,70
-arroz,35,55
-caca,20,20
-caca2,30,30
+fideos,300,20
+azucar,100,40
+cafe,400,50
+arroz,250,40
+poroto,300,50

@@ -23,9 +23,29 @@ def cargar_notas_Main(alumnos,materias,notasFinales):
         contador=0
         for linea in materias:
             print(f"Materia: {linea[0]}")
-            nota1=float(input("Ingrese la primer nota: "))
+            while True:
+                try:
+                    nota1=float(input("Ingrese la primer nota: "))
+                    if nota1<0 or nota1>10:
+                        print("La nota debe estar entre 1 y 10")
+                    else:
+                        break
+            
+                except ValueError:
+                    print("La nota solo puede ser un numero")
+
             materias[contador][1]=nota1
-            nota2=float(input("Ingrese la segunda nota: "))
+            while True:
+                try:
+                    nota2=float(input("Ingrese la segunda nota: "))
+                    if nota2<0 or nota2>10:
+                        print("La nota debe estar entre 1 y 10")
+                    else:
+                        break
+            
+                except ValueError:
+                    print("La nota solo puede ser un numero")
+
             materias[contador][2]=nota2
             promedio=(nota1+nota2)/2
             materias[contador][3]=promedio

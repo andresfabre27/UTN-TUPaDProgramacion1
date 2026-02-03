@@ -1,112 +1,116 @@
-#Practica integradora 2
+# Practica integradora 3 Repaso
 
-alumnos={60902 : "Rodolfo Fernandez",
-         61654 : "Luis Gomez",
-         61852 : "Andrea Pereira",
-         61754 : "Juan Cruz Gonzales"
-        }
+import os
 
-materias=[["Ciencias",None,None,None],
-          ["Historia",None,None,None],
-          ["Geografia",None,None,None],
-          ["Matematicas",None,None,None],
-          ["Fisica",None,None,None]
-          ]
+direccion=os.path.join(os.path.dirname(__file__), 'alumnos.txt')
+direccion2=os.path.join(os.path.dirname(__file__), 'aprobados.txt')
 
-notasFinales=[]
+diccionario={}
 
-def cargar_notas_Main(alumnos,materias,notasFinales):
+def crear_archivo_alumnos():
 
-    print("Carga de Notas para los alumnos") 
-    for diccionario in alumnos.values():
-        print(f"Alumno: {diccionario}")
-        contador=0
-        for linea in materias:
-            print(f"Materia: {linea[0]}")
-            while True:
-                try:
-                    nota1=float(input("Ingrese la primer nota: "))
-                    if nota1<0 or nota1>10:
-                        print("La nota debe estar entre 1 y 10")
-                    else:
-                        break
-            
-                except ValueError:
-                    print("La nota solo puede ser un numero")
+    try:
+        with open(direccion, 'x') as f:
+            print("Archivo alumnos creado!!")
+    except FileExistsError:
+        print("El archivo alumnos ya existe.")
 
-            materias[contador][1]=nota1
-            while True:
-                try:
-                    nota2=float(input("Ingrese la segunda nota: "))
-                    if nota2<0 or nota2>10:
-                        print("La nota debe estar entre 1 y 10")
-                    else:
-                        break
-            
-                except ValueError:
-                    print("La nota solo puede ser un numero")
 
-            materias[contador][2]=nota2
-            promedio=(nota1+nota2)/2
-            materias[contador][3]=promedio
-            contador+=1
-        mostrar_materias(materias)
-        print(f"La materia con mejor nota es: {materia_mejor_calificacion(materias)}")
-        print(f"El promedio general del alumno es: {promedio_general(materias,diccionario,notasFinales)}")
-    print(f"El alumno con mejor promedio es: {mejor_promedio(notasFinales)}")
-
-def mostrar_materias(materias):
-
-    for linea in materias:
-        print(f"Materia: {linea[0]} Nota 1: {linea[1]} Nota 2: {linea[2]}")
-
-def materia_mejor_calificacion(materias):
-
-    mejor=0
-    mejorMateria=[]
-
-    for linea in materias:
-        if linea[3]>=mejor:
-            mejor=linea[3]
-
-    for linea in materias:
-            if linea[3]==mejor:
-                mejorMateria.append(linea[0])
-
-    return mejorMateria 
-
-def promedio_general(materias,diccionario,notasFinales):
+def crear_diccionario(diccionario):
     
-    promedio=0
-    for linea in materias:
-        promedio+=linea[3]
+    with open(direccion,"r") as archivo:
+        for linea in archivo:
+            temp=linea.split(";")
+            diccionario[int(temp[2])]=temp[0]+" "+temp[1]
 
-    promedio/=5
-    lista=[diccionario,promedio]
-    notasFinales.append(lista)
+def ver_alumnos():
+    with open(direccion,"r") as archivo:
+        print("Alumnos--------------")
+        for linea in archivo:
+            temp=linea.split(";")
+            print(f"Nombre: {temp[0]} {temp[1]} legajo: {temp[2]} promedio: {temp[3].strip()}")
 
-    return promedio
-
-def mejor_promedio(notasFinales):
+def agregar_alumnos(diccionario):
     
-    notaMayor=0
-    mejorAlumno=[]
-    for linea in notasFinales:
-        if linea[1]>notaMayor:
-            notaMayor=linea[1]
+    while True:
+        legajo=input("Ingrese el legajo del alumno: ")
+        if len(legajo)==5:
+            break
+        else:
+            print("El legajo debe tener 5 numeros!!")
 
-    for linea in notasFinales:
-        if linea[1]==notaMayor:
-            mejorAlumno.append(linea[0])
-    return mejorAlumno
-        
-        
+    legajo=int(legajo)
 
-cargar_notas_Main(alumnos,materias,notasFinales)
+    for key in diccionario.keys():
+        if legajo==key:
+            print(f"El legajo {legajo} ya existe en el archivo.txt")
+            return
+
+    while True:    
+        nombre=input("Ingrese el nombre del alumno: ")
+        if not nombre:
+            print("Debe ingresar algun valor!!")
+        elif not nombre.isalpha():
+            print("El nombre no pueden ser numeros!!")
+        else:
+            break
+    while True:    
+        apellido=input("ingrese el apellido del alumno: ")
+        if not apellido:
+            print("Debe ingresar algun valor!!")
+        elif not apellido.isalpha():
+            print("El apellido no pueden ser numeros!!")
+        else:
+            break
+    
+    while True:
+        promedio=int(input("Ingrese el promedio: "))
+        if 0<promedio<=10:
+            break
+        else:
+            print("El promedio debe ser mayor a cero y menor a 11!!")
+    with open(direccion,"a") as archivo:
+       
+            archivo.write(f"{nombre};{apellido};{legajo};{promedio}\n")
+            print("Alumno cargado!!")
+
+def generar_aprobados():
+    with open(direccion,"r") as archivo1, open(direccion2,"w") as archivo2:
+        for linea in archivo1:
+            temp=linea.split(";")
+            if int(temp[3].strip())>=6:
+                archivo2.write(f"{temp[0]};{temp[1]};{temp[2]};{temp[3].strip()}\n")
+        print("Archivo generado!!")
+    
+    print("------------Alumnos Aprobados-------------")
+    with open(direccion2,"r") as archivo:
+        for linea in archivo:
+            temp=linea.split(";")
+            print(f"Nombre: {temp[0]} {temp[1]} legajo: {temp[2]} promedio: {temp[3].strip()}")
 
 
+menu=False
+crear_archivo_alumnos()
+crear_diccionario(diccionario)
+while menu==False:
+    print("a- Ver alumnos")
+    print("b- Agregar alumno")
+    print("c- Generar y mostrar archivo de aprobados")
+    print("d- Salir")
+    opcion=input().lower()
 
-        
+    if opcion=="a":
+        ver_alumnos()
 
+    elif opcion=="b":
+        agregar_alumnos(diccionario)
+        crear_diccionario(diccionario)
 
+    elif opcion=="c":
+        generar_aprobados()
 
+    elif opcion=="d":
+        menu=True
+
+    else:
+        print("Error de menu!!")

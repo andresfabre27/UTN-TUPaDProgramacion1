@@ -1,0 +1,8 @@
+Juan;Pérez;53365;8
+María;López;55654;10
+Pablo;Gómez;58999;6
+Andr�s;Fabre;28201;10
+pepa;pig;45654;3
+pig;pepa;45321;4
+Enano;Manrique;123456;1
+El;Culon;12345;5

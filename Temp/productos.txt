@@ -1,5 +1,7 @@
-fideos,300,20
-azucar,100,40
-cafe,400,50
-arroz,250,40
-poroto,300,50
+fideos,50,40
+azucar,60,50
+cafe,25,53
+arroz,60,35
+poroto,40.0,15
+salsa de tomate,15.0,10
+123,123.0,123

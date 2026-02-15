@@ -76,7 +76,7 @@ def es_palindromo(palabra):
 
     
     largo=len(palabra)
-    if len(palabra)==1:
+    if len(palabra)==1 or len(palabra)==0:
         return True
     
     if palabra[0]==palabra[-1]:

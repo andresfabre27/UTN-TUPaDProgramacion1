@@ -262,7 +262,7 @@ productos=[]
 
 def cargar_productos_lista(productos):
     productos.clear()
-    with open(direccion,"r") as archivo:
+    with open(direccion,"r",encoding="utf-8") as archivo:
         for linea in archivo:
             temp=linea.split(",")
             diccionario={} 

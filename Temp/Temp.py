@@ -1,13 +1,12 @@
-#Ejercicio Nro 5
 
-def es_palindromo(palabra):
-    if len(palabra)==1 or len(palabra)==0:                        
-        return True
-    else:
-        if palabra[0]==palabra[-1]:
-            return es_palindromo(palabra[1:-1])
-        else:
-            return False
-        
-palabra=input("Ingrese una palabra: ")
-print(f"¿Es palindromo? {es_palindromo(palabra)}")
+lista=[[1,2,3],[4,5,6],[7,8,9]]
+
+    elif opcion=="b":
+        agregar_alumnos(diccionario)
+        crear_diccionario(diccionario)
+
+for i in range(len(lista)):
+    if 8==lista[i][1]:
+        indice=i
+
+print(indice)
